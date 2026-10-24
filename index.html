@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK Library - Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i>
+            <h1>RK Library</h1>
+        </div>
+        <div class="header-tagline">
+            <span>Library Management System</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar / Add & Edit Form Section -->
+        <aside class="form-container">
+            <h2 id="form-title"><i class="fa-solid fa-plus-circle"></i> Add New Book</h2>
+            <form id="book-form">
+                <input type="hidden" id="book-id">
+                
+                <div class="input-group">
+                    <label for="book-title">Book Title</label>
+                    <input type="text" id="book-title" placeholder="Enter book title" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author" placeholder="Enter author name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="book-isbn">ISBN Number</label>
+                    <input type="text" id="book-isbn" placeholder="Enter ISBN number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="book-category">Category</label>
+                    <select id="book-category" required>
+                        <option value="">Select Category</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                        <option value="Science & Tech">Science & Tech</option>
+                        <option value="History">History</option>
+                        <option value="Biography">Biography</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="book-status">Status</label>
+                    <select id="book-status" required>
+                        <option value="Available">Available</option>
+                        <option value="Issued">Issued</option>
+                    </select>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="save-btn" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i> Save Book
+                    </button>
+                    <button type="button" id="cancel-btn" class="btn btn-secondary hidden">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </aside>
+
+        <!-- Main Content Section: Search, Filters & Table -->
+        <main class="content-container">
+            <!-- Filter Controls -->
+            <div class="controls-card">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search by title, author, or ISBN...">
+                </div>
+
+                <div class="filter-box">
+                    <select id="category-filter">
+                        <option value="All">All Categories</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                        <option value="Science & Tech">Science & Tech</option>
+                        <option value="History">History</option>
+                        <option value="Biography">Biography</option>
+                    </select>
+
+                    <select id="status-filter">
+                        <option value="All">All Availability</option>
+                        <option value="Available">Available</option>
+                        <option value="Issued">Issued</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Books Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>ISBN</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions / Issue-Return</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-list">
+                        <!-- Dynamic content loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>RK Library</strong>. Created by <strong>Rajan.K</strong>. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
